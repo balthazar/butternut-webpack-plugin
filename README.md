@@ -1,4 +1,7 @@
 <p align="right">
+  <a href="https://www.npmjs.com/package/butternut-webpack-plugin">
+    <img src="https://img.shields.io/npm/v/butternut-webpack-plugin.svg?style=flat-square">
+  </a>
   <a href="https://travis-ci.org/Apercu/butternut-webpack-plugin">
     <img src="https://img.shields.io/travis/Apercu/butternut-webpack-plugin.svg?style=flat-square">
   </a>
