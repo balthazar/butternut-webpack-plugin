@@ -1,3 +1,9 @@
+<p align="right">
+  <a href="https://travis-ci.org/Apercu/butternut-webpack-plugin">
+    <img src="https://img.shields.io/travis/Apercu/butternut-webpack-plugin.svg?style=flat-square">
+  </a>
+</p>
+
 # butternut-webpack-plugin
 
     yarn add --dev butternut-webpack-plugin

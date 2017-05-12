@@ -3,9 +3,12 @@
   "version": "0.0.4",
   "description": "Butternut webpack plugin",
   "main": "dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "rm -rf dist && babel index.js --out-dir dist"
+    "build": "rm -rf dist && babel index.js --out-dir dist",
+    "lint": "eslint index.js"
   },
   "author": "Balthazar Gronon <bgronon@gmail.com>",
   "license": "MIT",
@@ -15,13 +18,20 @@
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "eslint": "^3.19.0",
+    "eslint-config-zavatta": "^4.3.0",
     "webpack": "^2.5.1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Apercu/butternut-webpack-plugin"
+  },
+  "eslintConfig": {
+    "extends": [
+      "zavatta"
+    ]
   },
   "keywords": [
     "butternut",
