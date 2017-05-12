@@ -1,0 +1,31 @@
+{
+  "name": "butternut-webpack-plugin",
+  "version": "0.0.4",
+  "description": "Butternut webpack plugin",
+  "main": "dist/index.js",
+  "files": ["dist"],
+  "scripts": {
+    "build": "rm -rf dist && babel index.js --out-dir dist"
+  },
+  "author": "Balthazar Gronon <bgronon@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "butternut": "^0.3.5",
+    "webpack-sources": "^0.2.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "eslint": "^3.19.0",
+    "webpack": "^2.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Apercu/butternut-webpack-plugin"
+  },
+  "keywords": [
+    "butternut",
+    "webpack",
+    "webpack-plugin"
+  ]
+}
