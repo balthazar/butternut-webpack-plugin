@@ -2,8 +2,6 @@ import ModuleFilenameHelpers from 'webpack/lib/ModuleFilenameHelpers'
 import { RawSource } from 'webpack-sources'
 import { squash } from 'butternut'
 
-const isEntryChunk = chunk => chunk.hasRuntime() && chunk.isInitial()
-
 export default class ButternutPlugin {
 
   constructor (conf = {}) {
@@ -15,21 +13,21 @@ export default class ButternutPlugin {
     compiler.plugin('compilation', compilation => {
       compilation.plugin('optimize-chunk-assets', (chunks, callback) => {
 
-        for (const chunk of chunks) {
-          const files = chunk.files
+        const matchObjectOpts = { test: /\.js($|\?)/i }
+        const files = getFiles(chunks, compilation, matchObjectOpts)
 
-          for (const file of files) {
-            const matchObjectConfiguration = { test: /\.js($|\?)/i }
+        for (const file of files) {
 
-            if (ModuleFilenameHelpers.matchObject(matchObjectConfiguration, file)) {
-              const asset = compilation.assets[file]
-              const code = isEntryChunk(chunk) ? asset.source() : `__assumeDataProperty(global, "webpackJsonp", __abstract("function"))\n ${asset.source()}`
-              const transformed = squash(code, this.conf)
-
-              compilation.assets[file] = new RawSource(transformed.code)
-            }
-
+          if (!ModuleFilenameHelpers.matchObject(matchObjectOpts, file)) {
+            return
           }
+
+          const asset = compilation.assets[file]
+          const code = asset.source()
+          const transformed = squash(code, this.conf)
+
+          compilation.assets[file] = new RawSource(transformed.code)
+
         }
 
         callback()
@@ -37,4 +35,12 @@ export default class ButternutPlugin {
       })
     })
   }
+}
+
+function getFiles (chunks, compilation) {
+  const files = []
+  chunks.forEach(chunk => files.push(...chunk.files))
+  files.push(...compilation.additionalChunkAssets)
+
+  return files
 }
