@@ -19,7 +19,7 @@ export default class ButternutPlugin {
           const files = chunk.files
 
           for (const file of files) {
-            const matchObjectConfiguration = { test: /\.js$/ }
+            const matchObjectConfiguration = { test: /\.js($|\?)/i }
 
             if (ModuleFilenameHelpers.matchObject(matchObjectConfiguration, file)) {
               const asset = compilation.assets[file]
