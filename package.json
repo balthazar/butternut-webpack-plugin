@@ -19,7 +19,7 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-preset-env": "^1.4.0",
     "eslint": "^3.19.0",
     "eslint-config-zavatta": "^4.3.0",
     "webpack": "^2.5.1"
