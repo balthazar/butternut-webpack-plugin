@@ -1,6 +1,6 @@
 {
   "name": "butternut-webpack-plugin",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Butternut webpack plugin",
   "main": "dist/index.js",
   "files": [
