@@ -27,4 +27,10 @@ export default {
 }
 ```
 
+If using commonjs requires, you'll have to grab `default` instead
+
+```js
+const ButternutWebpackPlugin = require('butternut-webpack-plugin').default
+```
+
 Checkout the options you can pass to butternut on [their Readme](https://github.com/Rich-Harris/butternut#javascript-api).
