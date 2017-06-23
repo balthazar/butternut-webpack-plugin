@@ -1,6 +1,6 @@
 {
   "name": "butternut-webpack-plugin",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Butternut webpack plugin",
   "main": "dist/index.js",
   "files": [
@@ -13,16 +13,16 @@
   "author": "Balthazar Gronon <bgronon@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "butternut": "^0.3.5",
-    "webpack-sources": "^0.2.3"
+    "butternut": "^0.4.6",
+    "webpack-sources": "^1.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
-    "eslint": "^3.19.0",
-    "eslint-config-zavatta": "^4.3.0",
-    "webpack": "^2.5.1"
+    "eslint": "^4.0.0",
+    "eslint-config-zavatta": "^6.0.0",
+    "webpack": "^3.0.0"
   },
   "repository": {
     "type": "git",
